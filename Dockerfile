@@ -1,6 +1,6 @@
-LABEL maintainer="ndlexecme@gmail.com"
-
 FROM python:latest
+
+LABEL maintainer="ndlexecme@gmail.com"
 
 COPY requirements.txt /requirements.txt
 RUN pip install -r requirements.txt
