@@ -8,4 +8,4 @@ RUN pip install -r requirements.txt
 COPY . /app
 WORKDIR /app
 
-CMD ["python", "ptp-bot.py"]
+ENTRYPOINT ["python", "ptp-bot.py"]
