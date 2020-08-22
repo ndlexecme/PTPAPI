@@ -1,7 +1,6 @@
-venv/
 .ptp.conf
 .ptp_docker.env
 .ptp_cookies
-
-__pycache__
-*.pyc
+venv/
+.git/
+__pycache__/

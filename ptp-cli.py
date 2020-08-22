@@ -6,7 +6,7 @@ import logging
 import copy
 
 import ptp
-from config import parse_config
+from config import parse_config, parse_env
 from argparsejson.argparsejson import parse_arguments
 
 appdir = os.path.abspath(os.path.dirname(__file__))
@@ -62,9 +62,12 @@ def main():
         exit()
 
     configfile = os.path.join(appdir, '.ptp.conf')
-    config = parse_config(configfile).get('ptp')
+    if os.path.exists(configfile):
+        config = parse_config(configfile)
+    else:
+        config = parse_env()
 
-    ptpobj = ptp.PTP(config.get('ApiUser'), config.get('ApiKey'), appdir, logger=LOG)
+    ptpobj = ptp.PTP(config.get('ptp', {}).get('ApiUser'), config.get('ptp', {}).get('ApiKey'), appdir, logger=LOG)
 
     try:
         perform_actions(ptpobj, arguments, parser=parser)

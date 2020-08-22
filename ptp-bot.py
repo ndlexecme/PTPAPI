@@ -8,7 +8,7 @@ import tabulate
 
 import discord
 
-from config import parse_config
+from config import parse_config, parse_env
 import ptp
 from argparsejson.argparsejson import parse_arguments
 
@@ -206,7 +206,11 @@ def main():
       logging.basicConfig(level=logging.INFO)
 
     configfile = os.path.join(appdir, '.ptp.conf')
-    config = parse_config(configfile)
+
+    if os.path.exists(configfile):
+        config = parse_config(configfile)
+    else:
+        config = parse_env()
 
     ptpobj = ptp.PTP(config.get('ptp', {}).get('ApiUser'), config.get('ptp', {}).get('ApiKey'), appdir, logger=LOG)
 
