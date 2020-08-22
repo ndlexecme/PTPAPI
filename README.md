@@ -1,4 +1,7 @@
 # PTPAPI
+
+[![](https://images.microbadger.com/badges/version/ndlexecme/ptpbot.svg)](https://microbadger.com/images/ndlexecme/ptpbot "Get your own version badge on microbadger.com")
+
 ## Prerequisites
 * `python3`
 * `pip3`
