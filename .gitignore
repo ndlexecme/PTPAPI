@@ -1,0 +1,6 @@
+venv/
+.ptp.conf
+.ptp_cookies
+
+__pycache__
+*.pyc

@@ -1,0 +1,165 @@
+{
+  "args": [
+    {
+      "name": "--debug",
+      "help": "print debug messages",
+      "action": "store_true"
+    },
+    {
+      "name": "-i",
+      "help": "Enter interactive mode",
+      "action": "store_true"
+    },
+    {
+      "name": "--json",
+      "help": "Return JSON output for PTP commands",
+      "action": "store_true"
+    }
+  ],
+  "subparser_params": {
+    "dest": "action"
+  },
+  "subparsers": [
+    {
+      "name": "help",
+      "help": "show this help message"
+    },
+    {
+      "name": "usage",
+      "help": "show this usage message"
+    },
+    {
+      "name": "freeleech",
+      "abbrev": "fl",
+      "args": [
+        {
+          "name": "--limit",
+          "abbrev": "-l",
+          "type": "int",
+          "default": -1
+        },
+        {
+          "name": "--resolution",
+          "type": "string"
+        },
+        {
+          "name": "--codec",
+          "type": "string"
+        },
+        {
+          "name": "--source",
+          "type": "string"
+        },
+        {
+          "name": "--container",
+          "type": "string"
+        },
+        {
+          "name": "--golden",
+          "action": "store_const",
+          "const": true
+        }
+      ]
+    },
+    {
+      "name": "search",
+      "abbrev": "s",
+      "args": [
+        {
+          "name": "--limit",
+          "abbrev": "-l",
+          "type": "int",
+          "default": -1
+        },
+        {
+          "name": "--resolution",
+          "type": "string"
+        },
+        {
+          "name": "--codec",
+          "type": "string"
+        },
+        {
+          "name": "--source",
+          "type": "string"
+        },
+        {
+          "name": "--container",
+          "type": "string"
+        },
+        {
+          "name": "--golden",
+          "action": "store_const",
+          "const": true
+        },
+        {
+          "name": "query",
+          "type": "str"
+        }
+      ]
+    },
+    {
+      "name": "ratio",
+      "abbrev": "r"
+    },
+    {
+      "name": "bonus",
+      "abbrev": "bp"
+    },
+    {
+      "name": "bonus-rate",
+      "abbrev": "bprate"
+    },
+    {
+      "name": "uploaded",
+      "abbrev": "up"
+    },
+    {
+      "name": "downloaded",
+      "abbrev": "down"
+    },
+    {
+      "name": "hnrs"
+    },
+    {
+      "name": "summary",
+      "abbrev": "sum",
+      "args": [
+        {
+          "name": "--detailed",
+          "abbrev": "-d",
+          "action": "store_true"
+        },
+        {
+          "name": "--limit",
+          "abbrev": "-l",
+          "type": "int",
+          "default": 10
+        },
+        {
+          "name": "--resolution",
+          "type": "string",
+          "default": "1080p"
+        },
+        {
+          "name": "--codec",
+          "type": "string"
+        },
+        {
+          "name": "--source",
+          "type": "string",
+          "default": "Blu-ray"
+        },
+        {
+          "name": "--container",
+          "type": "string",
+          "default": "MKV"
+        },
+        {
+          "name": "--golden",
+          "action": "store_true"
+        }
+      ]
+    }
+  ]
+}

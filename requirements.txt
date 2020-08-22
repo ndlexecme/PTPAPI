@@ -1,0 +1,7 @@
+--extra-index-url https://jon77p.github.io/pypi
+requests
+bs4
+discord
+argparsejson
+tabulate
+quickjs
