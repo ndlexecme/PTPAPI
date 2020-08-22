@@ -8,6 +8,13 @@ import copy
 import tabulate
 import quickjs
 
+ctx = quickjs.Context()
+
+
+def execJS(script):
+    ctx.eval(script)
+    return ctx.get('coverViewJsonData')
+
 class PTP:
   baseURL = "https://passthepopcorn.me"
   resultsPerPage = 50
@@ -100,11 +107,10 @@ class PTP:
       splitted.pop(0)
       script = '\n\t'.join(splitted[0:2])
 
-      ctx = quickjs.Context()
 
-      ctx.eval(script)
+      result = execJS(script)
 
-      coverData = json.loads(ctx.get('coverViewJsonData').json())[0]
+      coverData = json.loads(result.json())[0]
 
       coverData["total"] = total
 
