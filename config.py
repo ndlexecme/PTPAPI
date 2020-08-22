@@ -34,17 +34,17 @@ def parse_config(configfile):
 
 def parse_env():
     apiuser = os.environ.get('PTP_APIUSER')
-    if apiuser == '':
+    if apiuser is None or apiuser == '':
         LOG.critical("Missing environment variable '{}'!".format('PTP_APIUSER'))
         exit(-1)
 
     apikey = os.environ.get('PTP_APIKEY') 
-    if apikey == '':
+    if apikey is None or apikey == '':
         LOG.critical("Missing environment variable '{}'!".format('PTP_APIKEY'))
         exit(-1)
 
     discordtoken = os.environ.get('PTP_DISCORD_TOKEN') 
-    if discordtoken == '':
+    if discordtoken is None or discordtoken == '':
         LOG.critical("Missing environment variable '{}'!".format('PTP_DISCORD_TOKEN'))
         exit(-1)
 
